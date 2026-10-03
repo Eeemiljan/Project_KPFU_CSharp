@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 enum BankAccountType
 {
@@ -15,12 +15,12 @@ struct BankAccount
 
 enum University
 {
-    КГУ,
-    КАИ,
-    КХТИ
+    KGU,
+    KAI,
+    KHTI
 }
 
-struct Employee
+struct Worker
 {
     public string Name;
     public University University;
@@ -30,26 +30,39 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine("Упражнение 3.1. Виды банковского счёта. Ввод не требуется.");
-        // Решение упражнения 3.1, написанное пользователем.
+        // Упражнение 3.1
+        Console.WriteLine("Упражнение 3.1");
+
         BankAccountType accountType = BankAccountType.Current;
-        Console.WriteLine(accountType);
 
-        Console.WriteLine("\nУпражнение 3.2. Информация о банковском счёте. Ввод не требуется.");
-        BankAccount account;
-        // Номер — строка: с ним не считают, а начальные нули важны.
-        account.Number = "00123456789012345678";
+        Console.WriteLine($"Тип банковского счета: {accountType}");
+        Console.WriteLine();
+
+
+        // Упражнение 3.2
+        Console.WriteLine("Упражнение 3.2");
+
+        BankAccount account = new BankAccount();
+
+        account.Number = "123456789";
         account.Type = BankAccountType.Savings;
-        account.Balance = 12500.50m;
-        Console.WriteLine($"Номер: {account.Number}");
-        Console.WriteLine($"Тип: {account.Type}");
-        Console.WriteLine($"Баланс: {account.Balance:F2}");
+        account.Balance = 15000.50m;
 
-        Console.WriteLine("\nДомашнее задание 3.1. Работник и его ВУЗ. Ввод не требуется.");
-        Employee employee;
-        employee.Name = "Эмиль";
-        employee.University = University.КГУ;
-        Console.WriteLine($"Имя: {employee.Name}");
-        Console.WriteLine($"ВУЗ: {employee.University}");
+        Console.WriteLine($"Номер счета: {account.Number}");
+        Console.WriteLine($"Тип счета: {account.Type}");
+        Console.WriteLine($"Баланс: {account.Balance}");
+        Console.WriteLine();
+
+
+        // Домашнее задание 3.1
+        Console.WriteLine("Домашнее задание 3.1");
+
+        Worker worker = new Worker();
+
+        worker.Name = "Иван";
+        worker.University = University.KGU;
+
+        Console.WriteLine($"Имя работника: {worker.Name}");
+        Console.WriteLine($"ВУЗ: {worker.University}");
     }
 }
